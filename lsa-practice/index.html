@@ -14,9 +14,16 @@
       --blue: #1a73e8;
       --blue-dark: #1558b0;
       --blue-light: #e8f0fe;
+
       --green: #188038;
+      --green-light: #e6f4ea;
+
       --red: #d93025;
+      --red-light: #fce8e6;
+
       --yellow: #f9ab00;
+      --yellow-light: #fef7e0;
+
       --text: #202124;
       --muted: #5f6368;
       --border: #dadce0;
@@ -39,6 +46,7 @@
     }
 
     /* HEADER */
+
     .topbar {
       height: 68px;
       background: #fff;
@@ -92,6 +100,7 @@
     }
 
     /* LAYOUT */
+
     .app-shell {
       display: grid;
       grid-template-columns: 280px minmax(0, 1fr);
@@ -99,6 +108,7 @@
     }
 
     /* SIDEBAR */
+
     .sidebar {
       background: #fff;
       border-right: 1px solid var(--border);
@@ -207,6 +217,7 @@
     }
 
     /* MAIN */
+
     .main {
       padding: 46px;
     }
@@ -236,21 +247,25 @@
       color: var(--muted);
       line-height: 1.6;
       font-size: 15px;
-      max-width: 700px;
+      max-width: 740px;
       margin-bottom: 30px;
     }
 
     /* SCENARIO */
+
     .scenario {
       background: var(--navy);
       color: white;
       border-radius: 14px;
-      padding: 22px 24px;
+      padding: 24px;
       margin-bottom: 28px;
-      display: grid;
-      grid-template-columns: 1fr auto;
+    }
+
+    .scenario-top {
+      display: flex;
+      justify-content: space-between;
       gap: 24px;
-      align-items: center;
+      align-items: flex-start;
     }
 
     .scenario-label {
@@ -263,14 +278,14 @@
     }
 
     .scenario strong {
-      font-size: 17px;
+      font-size: 19px;
     }
 
     .scenario p {
       color: #dbe5f4;
       font-size: 13px;
-      line-height: 1.5;
-      margin: 7px 0 0;
+      line-height: 1.55;
+      margin: 8px 0 0;
     }
 
     .scenario-tag {
@@ -281,7 +296,38 @@
       white-space: nowrap;
     }
 
+    .scenario-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+
+    .scenario-detail {
+      background: rgba(255,255,255,.06);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .scenario-detail span {
+      display: block;
+      color: #9ec2ff;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .scenario-detail strong {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     /* CARD */
+
     .card {
       background: white;
       border: 1px solid var(--border);
@@ -312,6 +358,7 @@
     }
 
     /* FORMS */
+
     .field {
       margin-bottom: 22px;
     }
@@ -359,6 +406,7 @@
     }
 
     /* OPTIONS */
+
     .option-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -407,6 +455,10 @@
       margin-top: 1px;
     }
 
+    input[type="radio"] + label .check-ui {
+      border-radius: 50%;
+    }
+
     .choice input:checked + label .check-ui {
       background: var(--blue);
       border-color: var(--blue);
@@ -436,6 +488,7 @@
     }
 
     /* BUDGET */
+
     .budget-box {
       display: flex;
       align-items: center;
@@ -458,7 +511,8 @@
       border-radius: 0;
     }
 
-    /* INFO BOX */
+    /* INFO */
+
     .info-box {
       background: #f8f9fa;
       border-left: 4px solid var(--blue);
@@ -473,7 +527,8 @@
       color: var(--text);
     }
 
-    /* FOOTER CONTROLS */
+    /* CONTROLS */
+
     .controls {
       display: flex;
       align-items: center;
@@ -510,7 +565,6 @@
       cursor: not-allowed;
     }
 
-    /* STEP VISIBILITY */
     .step-panel {
       display: none;
     }
@@ -520,6 +574,7 @@
     }
 
     /* REVIEW */
+
     .review-grid {
       display: grid;
       gap: 13px;
@@ -540,7 +595,7 @@
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      padding: 6px 0;
+      padding: 7px 0;
       border-bottom: 1px solid #f1f3f4;
       font-size: 12px;
     }
@@ -576,7 +631,8 @@
       color: var(--muted);
     }
 
-    /* RESULT */
+    /* RESULTS */
+
     .result-screen {
       display: none;
     }
@@ -590,12 +646,16 @@
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 36px;
+    }
+
+    .score-summary {
       text-align: center;
+      margin-bottom: 34px;
     }
 
     .score-circle {
-      width: 112px;
-      height: 112px;
+      width: 118px;
+      height: 118px;
       border-radius: 50%;
       background: var(--blue-light);
       color: var(--blue);
@@ -606,52 +666,149 @@
       font-weight: 700;
     }
 
-    .score-card h2 {
+    .score-summary h2 {
       margin: 0 0 8px;
     }
 
-    .score-card > p {
+    .score-summary p {
       color: var(--muted);
       font-size: 14px;
-      margin-bottom: 26px;
+      margin: 0 auto;
+      max-width: 620px;
+      line-height: 1.55;
     }
 
-    .feedback {
-      text-align: left;
-      max-width: 650px;
-      margin: auto;
+    .results-section {
+      margin-top: 28px;
+    }
+
+    .results-section-title {
+      font-size: 17px;
+      margin: 0 0 12px;
+    }
+
+    .feedback-list {
+      display: grid;
+      gap: 10px;
     }
 
     .feedback-item {
-      border-top: 1px solid var(--border);
-      padding: 14px 0;
       display: flex;
-      gap: 12px;
+      gap: 13px;
+      padding: 16px;
+      border-radius: 9px;
+      border: 1px solid var(--border);
+    }
+
+    .feedback-item.good {
+      background: #fbfdfb;
+      border-color: #cce8d2;
+    }
+
+    .feedback-item.improve {
+      background: #fffdfa;
+      border-color: #f5dca2;
+    }
+
+    .feedback-item.important {
+      background: #fffafa;
+      border-color: #f2c9c5;
     }
 
     .feedback-icon {
-      width: 24px;
-      flex: 0 0 24px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
-      background: #e6f4ea;
-      color: var(--green);
       display: grid;
       place-items: center;
+      flex: 0 0 auto;
       font-size: 12px;
       font-weight: 700;
     }
 
-    .feedback-item strong {
-      display: block;
-      font-size: 13px;
-      margin-bottom: 3px;
+    .feedback-item.good .feedback-icon {
+      background: var(--green-light);
+      color: var(--green);
     }
 
-    .feedback-item span {
+    .feedback-item.improve .feedback-icon {
+      background: var(--yellow-light);
+      color: #a16000;
+    }
+
+    .feedback-item.important .feedback-icon {
+      background: var(--red-light);
+      color: var(--red);
+    }
+
+    .feedback-content strong {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .feedback-content span {
+      display: block;
       font-size: 12px;
       color: var(--muted);
-      line-height: 1.5;
+      line-height: 1.55;
+    }
+
+    .recommended-box {
+      margin-top: 28px;
+      background: #f8f9fa;
+      padding: 22px;
+      border-radius: 10px;
+    }
+
+    .recommended-box h3 {
+      margin: 0 0 5px;
+      font-size: 16px;
+    }
+
+    .recommended-box > p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+
+    .recommended-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .recommended-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 12px;
+    }
+
+    .recommended-item span {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin-bottom: 4px;
+    }
+
+    .recommended-item strong {
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .result-actions {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .new-location-note {
+      margin-top: 9px;
+      font-size: 11px;
+      color: var(--muted);
     }
 
     @media (max-width: 850px) {
@@ -668,12 +825,14 @@
       }
 
       .field-row,
-      .option-grid {
+      .option-grid,
+      .scenario-details,
+      .recommended-grid {
         grid-template-columns: 1fr;
       }
 
-      .scenario {
-        grid-template-columns: 1fr;
+      .scenario-top {
+        flex-direction: column;
       }
     }
   </style>
@@ -698,6 +857,7 @@
 <div class="app-shell">
 
   <!-- SIDEBAR -->
+
   <aside class="sidebar">
 
     <div class="exercise-label">Interactive Exercise</div>
@@ -748,57 +908,86 @@
 
     <div class="sidebar-note">
       <strong>Exercise Goal</strong><br>
-      Use the client scenario to configure an LSA account that balances lead volume, service relevance, geography and budget.
+      Use the assigned franchise scenario to build an LSA account that balances qualified lead volume, service relevance, geography, budget and lead management.
     </div>
 
   </aside>
 
 
   <!-- MAIN -->
+
   <main class="main">
+
     <div class="content" id="exerciseContent">
 
       <div class="eyebrow">LSA Account Builder</div>
+
       <h1>Configure the account.</h1>
 
       <p class="intro">
-        Review the client scenario, then make the account setup decisions you would use when launching their Local Services Ads campaign.
+        Each exercise assigns you a different franchise location. Review the scenario carefully and make the account setup decisions you believe best support that market.
       </p>
 
+
+      <!-- DYNAMIC SCENARIO -->
+
       <div class="scenario">
-        <div>
-          <div class="scenario-label">Client Scenario</div>
-          <strong>Premier Pools & Spas — Nashville</strong>
-          <p>
-            The franchise wants to generate qualified leads for new inground pool construction.
-            Their priority market is the greater Nashville area, with a focus on homeowners ready to begin a pool project.
-          </p>
+
+        <div class="scenario-top">
+
+          <div>
+            <div class="scenario-label">Your Assigned Client</div>
+            <strong id="scenarioLocation"></strong>
+            <p id="scenarioDescription"></p>
+          </div>
+
+          <div class="scenario-tag" id="scenarioGoal"></div>
+
         </div>
 
-        <div class="scenario-tag">
-          Goal: Qualified Leads
+        <div class="scenario-details">
+
+          <div class="scenario-detail">
+            <span>Primary Goal</span>
+            <strong id="scenarioPrimaryGoal"></strong>
+          </div>
+
+          <div class="scenario-detail">
+            <span>Market Situation</span>
+            <strong id="scenarioMarketSituation"></strong>
+          </div>
+
+          <div class="scenario-detail">
+            <span>Client Capacity</span>
+            <strong id="scenarioCapacity"></strong>
+          </div>
+
         </div>
+
       </div>
 
 
       <!-- STEP 1 -->
+
       <section class="step-panel active" data-panel="1">
 
         <div class="card">
+
           <div class="card-header">
             <h2>Business Profile</h2>
-            <p>Enter the core information that should represent the advertiser.</p>
+            <p>Configure the advertiser's core business information.</p>
           </div>
 
           <div class="card-body">
 
             <div class="field">
               <label class="field-label">Business name</label>
-              <input type="text" id="businessName" value="Premier Pools & Spas - Nashville">
+              <input type="text" id="businessName">
             </div>
 
             <div class="field">
               <label class="field-label">Primary business category</label>
+
               <select id="category">
                 <option value="">Select a category</option>
                 <option>Swimming pool contractor</option>
@@ -806,8 +995,9 @@
                 <option>General contractor</option>
                 <option>Landscaper</option>
               </select>
+
               <div class="field-help">
-                Choose the category that most closely represents the services being promoted.
+                Choose the category that most accurately reflects the primary service being advertised.
               </div>
             </div>
 
@@ -815,7 +1005,7 @@
 
               <div class="field">
                 <label class="field-label">Phone number</label>
-                <input type="text" placeholder="(615) 555-0123">
+                <input type="text" placeholder="(555) 555-0123">
               </div>
 
               <div class="field">
@@ -826,12 +1016,14 @@
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- STEP 2 -->
+
       <section class="step-panel" data-panel="2">
 
         <div class="card">
@@ -839,7 +1031,7 @@
           <div class="card-header">
             <h2>Select Services</h2>
             <p>
-              Choose the services this location should receive leads for.
+              Choose which services this location should be eligible to receive LSA leads for.
             </p>
           </div>
 
@@ -858,16 +1050,18 @@
                 </label>
               </div>
 
+
               <div class="choice">
                 <input type="checkbox" id="service2" data-service="Pool remodeling">
                 <label for="service2">
                   <span class="check-ui"></span>
                   <span>
                     <span class="choice-title">Pool Remodeling</span>
-                    <span class="choice-desc">Renovation or major updates to an existing pool.</span>
+                    <span class="choice-desc">Renovation or significant updates to an existing pool.</span>
                   </span>
                 </label>
               </div>
+
 
               <div class="choice">
                 <input type="checkbox" id="service3" data-service="Pool repair">
@@ -875,10 +1069,11 @@
                   <span class="check-ui"></span>
                   <span>
                     <span class="choice-title">Pool Repair</span>
-                    <span class="choice-desc">Equipment, plumbing and general pool repairs.</span>
+                    <span class="choice-desc">Equipment, plumbing and general repair services.</span>
                   </span>
                 </label>
               </div>
+
 
               <div class="choice">
                 <input type="checkbox" id="service4" data-service="Pool cleaning">
@@ -891,6 +1086,7 @@
                 </label>
               </div>
 
+
               <div class="choice">
                 <input type="checkbox" id="service5" data-service="Hot tub installation">
                 <label for="service5">
@@ -901,6 +1097,7 @@
                   </span>
                 </label>
               </div>
+
 
               <div class="choice">
                 <input type="checkbox" id="service6" data-service="Pool design">
@@ -916,17 +1113,19 @@
             </div>
 
             <div class="info-box">
-              <strong>Training consideration:</strong>
-              Selecting every possible service may generate more leads, but it can also create lead types the location does not want or cannot service.
+              <strong>Think strategically:</strong>
+              More selected services can mean more lead volume, but they can also produce opportunities the franchise does not actually want.
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- STEP 3 -->
+
       <section class="step-panel" data-panel="3">
 
         <div class="card">
@@ -934,307 +1133,394 @@
           <div class="card-header">
             <h2>Define the Service Area</h2>
             <p>
-              Determine where the location should be eligible to receive leads.
+              Determine where this advertiser should compete for Local Services Ads leads.
             </p>
           </div>
 
           <div class="card-body">
 
             <div class="field">
+
               <label class="field-label">Primary market</label>
-              <select id="market">
-                <option value="">Select a market</option>
-                <option>Nashville, TN</option>
-                <option>Franklin, TN</option>
-                <option>Murfreesboro, TN</option>
-                <option>Clarksville, TN</option>
-              </select>
+
+              <select id="market"></select>
+
             </div>
 
+
             <div class="field">
+
               <label class="field-label">Targeting approach</label>
 
               <div class="option-grid">
 
                 <div class="choice">
-                  <input type="radio" name="targeting" id="target1" value="Focused metro">
+                  <input
+                    type="radio"
+                    name="targeting"
+                    id="target1"
+                    value="Focused"
+                  >
+
                   <label for="target1">
+
                     <span class="check-ui"></span>
+
                     <span>
-                      <span class="choice-title">Focused Metro Area</span>
+                      <span class="choice-title">Focused Service Area</span>
+
                       <span class="choice-desc">
-                        Prioritize Nashville and the strongest surrounding service areas.
+                        Concentrate spend within the strongest and most serviceable markets.
                       </span>
                     </span>
+
                   </label>
                 </div>
 
+
                 <div class="choice">
-                  <input type="radio" name="targeting" id="target2" value="Maximum radius">
+
+                  <input
+                    type="radio"
+                    name="targeting"
+                    id="target2"
+                    value="Broad"
+                  >
+
                   <label for="target2">
+
                     <span class="check-ui"></span>
+
                     <span>
-                      <span class="choice-title">Maximum Available Area</span>
+                      <span class="choice-title">Broad Expansion</span>
+
                       <span class="choice-desc">
-                        Expand targeting broadly to pursue maximum possible lead volume.
+                        Expand into a wider geographic area to pursue additional lead volume.
                       </span>
                     </span>
+
                   </label>
                 </div>
 
               </div>
+
             </div>
 
+
             <div class="field">
-              <label class="field-label">Additional priority markets</label>
 
-              <div class="option-grid">
+              <label class="field-label">Additional markets</label>
 
-                <div class="choice">
-                  <input type="checkbox" id="area1" data-area="Brentwood">
-                  <label for="area1">
-                    <span class="check-ui"></span>
-                    <span>
-                      <span class="choice-title">Brentwood</span>
-                      <span class="choice-desc">Priority suburban market.</span>
-                    </span>
-                  </label>
-                </div>
+              <div class="option-grid" id="areaOptions"></div>
 
-                <div class="choice">
-                  <input type="checkbox" id="area2" data-area="Franklin">
-                  <label for="area2">
-                    <span class="check-ui"></span>
-                    <span>
-                      <span class="choice-title">Franklin</span>
-                      <span class="choice-desc">Priority Williamson County market.</span>
-                    </span>
-                  </label>
-                </div>
-
-                <div class="choice">
-                  <input type="checkbox" id="area3" data-area="Murfreesboro">
-                  <label for="area3">
-                    <span class="check-ui"></span>
-                    <span>
-                      <span class="choice-title">Murfreesboro</span>
-                      <span class="choice-desc">Secondary expansion market.</span>
-                    </span>
-                  </label>
-                </div>
-
-                <div class="choice">
-                  <input type="checkbox" id="area4" data-area="Bowling Green">
-                  <label for="area4">
-                    <span class="check-ui"></span>
-                    <span>
-                      <span class="choice-title">Bowling Green</span>
-                      <span class="choice-desc">Long-distance expansion market.</span>
-                    </span>
-                  </label>
-                </div>
-
-              </div>
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- STEP 4 -->
+
       <section class="step-panel" data-panel="4">
 
         <div class="card">
 
           <div class="card-header">
+
             <h2>Set the Budget</h2>
+
             <p>
-              Choose a weekly budget based on the client's lead-generation goals.
+              Determine a weekly LSA budget based on the scenario, market and client capacity.
             </p>
+
           </div>
 
           <div class="card-body">
 
             <div class="field">
+
               <label class="field-label">Weekly LSA budget</label>
 
               <div class="budget-box">
+
                 <div class="budget-prefix">$</div>
+
                 <input
                   type="number"
                   id="budget"
                   value="1500"
                   min="0"
                 >
+
               </div>
 
               <div class="field-help">
-                Enter the maximum weekly amount allocated to Local Services Ads.
+                Enter the maximum weekly amount you would initially allocate to this LSA campaign.
               </div>
+
             </div>
 
+
             <div class="field">
+
               <label class="field-label">Budget strategy</label>
 
               <div class="option-grid">
 
                 <div class="choice">
-                  <input type="radio" name="budgetStrategy" id="budget1" value="Conservative">
+
+                  <input
+                    type="radio"
+                    name="budgetStrategy"
+                    id="budget1"
+                    value="Conservative"
+                  >
+
                   <label for="budget1">
+
                     <span class="check-ui"></span>
+
                     <span>
                       <span class="choice-title">Conservative Launch</span>
+
                       <span class="choice-desc">
-                        Start smaller and increase after lead quality is evaluated.
+                        Begin with controlled spend and scale after lead quality is established.
                       </span>
                     </span>
+
                   </label>
+
                 </div>
 
+
                 <div class="choice">
-                  <input type="radio" name="budgetStrategy" id="budget2" value="Lead volume">
+
+                  <input
+                    type="radio"
+                    name="budgetStrategy"
+                    id="budget2"
+                    value="Aggressive"
+                  >
+
                   <label for="budget2">
+
                     <span class="check-ui"></span>
+
                     <span>
                       <span class="choice-title">Lead Volume Focused</span>
+
                       <span class="choice-desc">
-                        Give the campaign enough budget to compete consistently.
+                        Give the account more budget to compete aggressively for available leads.
                       </span>
                     </span>
+
                   </label>
+
                 </div>
 
               </div>
+
             </div>
 
+
             <div class="info-box">
-              <strong>Remember:</strong>
-              Budget should be evaluated alongside expected cost per lead, market demand, close rate and the location's ability to respond to incoming leads.
+              <strong>Consider the whole scenario:</strong>
+              A high budget is not always the best answer. Think about market size, lead demand, service area and the franchise's ability to handle new opportunities.
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- STEP 5 -->
+
       <section class="step-panel" data-panel="5">
 
         <div class="card">
 
           <div class="card-header">
+
             <h2>Lead Settings</h2>
+
             <p>
-              Configure how the advertiser will receive and manage opportunities.
+              Determine how the advertiser should receive and manage LSA opportunities.
             </p>
+
           </div>
 
           <div class="card-body">
 
             <div class="field">
+
               <label class="field-label">Preferred lead types</label>
 
               <div class="option-grid">
 
                 <div class="choice">
-                  <input type="checkbox" id="lead1" data-lead="Phone calls">
+
+                  <input
+                    type="checkbox"
+                    id="lead1"
+                    data-lead="Phone calls"
+                  >
+
                   <label for="lead1">
+
                     <span class="check-ui"></span>
+
                     <span>
                       <span class="choice-title">Phone Calls</span>
-                      <span class="choice-desc">Prospects contact the business by phone.</span>
+
+                      <span class="choice-desc">
+                        Prospects contact the franchise directly by phone.
+                      </span>
                     </span>
+
                   </label>
+
                 </div>
 
+
                 <div class="choice">
-                  <input type="checkbox" id="lead2" data-lead="Messages">
+
+                  <input
+                    type="checkbox"
+                    id="lead2"
+                    data-lead="Messages"
+                  >
+
                   <label for="lead2">
+
                     <span class="check-ui"></span>
+
                     <span>
                       <span class="choice-title">Messages</span>
-                      <span class="choice-desc">Prospects submit a message-based inquiry.</span>
+
+                      <span class="choice-desc">
+                        Prospects submit a message-based inquiry.
+                      </span>
                     </span>
+
                   </label>
+
                 </div>
 
               </div>
+
             </div>
 
+
             <div class="field">
-              <label class="field-label">Business response expectation</label>
+
+              <label class="field-label">
+                Business response expectation
+              </label>
 
               <select id="responseSpeed">
+
                 <option value="">Select an expectation</option>
                 <option>Within 5 minutes</option>
                 <option>Within 30 minutes</option>
                 <option>Within 2 hours</option>
                 <option>Within 1 business day</option>
+
               </select>
+
             </div>
+
 
             <div class="field">
-              <label class="field-label">Lead management approach</label>
+
+              <label class="field-label">
+                Lead management approach
+              </label>
 
               <select id="leadManagement">
+
                 <option value="">Select an approach</option>
-                <option>Review and categorize leads consistently</option>
-                <option>Only review leads when disputed</option>
-                <option>Let leads remain uncategorized</option>
+
+                <option>
+                  Review and categorize leads consistently
+                </option>
+
+                <option>
+                  Only review leads when disputed
+                </option>
+
+                <option>
+                  Let leads remain uncategorized
+                </option>
+
               </select>
+
             </div>
 
+
             <div class="info-box">
-              <strong>Training consideration:</strong>
-              Building the account is only the beginning. Lead response and lead management directly affect the quality of the program over time.
+              <strong>Account setup does not end at launch:</strong>
+              Lead response and ongoing lead management are critical parts of a healthy LSA program.
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- STEP 6 -->
+
       <section class="step-panel" data-panel="6">
 
         <div class="card">
 
           <div class="card-header">
             <h2>Review Your Account</h2>
+
             <p>
-              Check your setup before submitting the exercise.
+              Check your selections before submitting the exercise.
             </p>
           </div>
 
           <div class="card-body">
 
-            <div class="review-grid" id="reviewGrid">
-              <!-- Populated with JS -->
-            </div>
+            <div class="review-grid" id="reviewGrid"></div>
+
 
             <div class="submit-area">
-              <h3>Ready to launch?</h3>
+
+              <h3>Ready to submit?</h3>
+
               <p>
-                Submit your setup to see how your account-building decisions compare with the recommended approach.
+                Your setup will be evaluated against the needs of your assigned franchise location.
               </p>
 
-              <button class="btn btn-primary" onclick="submitExercise()">
+              <button
+                class="btn btn-primary"
+                onclick="submitExercise()"
+              >
                 Submit Exercise
               </button>
+
             </div>
 
           </div>
+
         </div>
 
       </section>
 
 
       <!-- CONTROLS -->
+
       <div class="controls">
+
         <button
           class="btn btn-secondary"
           id="backBtn"
@@ -1251,81 +1537,115 @@
         >
           Continue
         </button>
+
       </div>
 
     </div>
 
 
-    <!-- RESULT SCREEN -->
+    <!-- RESULTS -->
+
     <div class="content result-screen" id="resultScreen">
 
-      <div class="eyebrow">Exercise Complete</div>
-      <h1>Account Builder Results</h1>
+      <div class="eyebrow">
+        Exercise Complete
+      </div>
+
+      <h1 id="resultsLocation">
+        Account Builder Results
+      </h1>
 
       <p class="intro">
-        Review the feedback below and compare it with the choices you made during the exercise.
+        Your decisions have been evaluated against the needs of this specific LSA scenario.
       </p>
+
 
       <div class="score-card">
 
-        <div class="score-circle" id="scoreCircle">
-          0%
-        </div>
+        <div class="score-summary">
 
-        <h2 id="resultTitle">Account Setup Complete</h2>
-
-        <p id="resultDescription">
-          Your score is based on the training scenario provided.
-        </p>
-
-        <div class="feedback">
-
-          <div class="feedback-item">
-            <div class="feedback-icon">1</div>
-            <div>
-              <strong>Keep services aligned with the client goal.</strong>
-              <span>
-                This advertiser wants new pool construction leads. Avoid activating unrelated services simply to increase lead volume.
-              </span>
-            </div>
+          <div class="score-circle" id="scoreCircle">
+            0%
           </div>
 
-          <div class="feedback-item">
-            <div class="feedback-icon">2</div>
-            <div>
-              <strong>Prioritize qualified geography over maximum geography.</strong>
-              <span>
-                A larger service area is not automatically better. Focus targeting on markets the franchise can realistically service and convert.
-              </span>
-            </div>
-          </div>
+          <h2 id="resultTitle"></h2>
 
-          <div class="feedback-item">
-            <div class="feedback-icon">3</div>
-            <div>
-              <strong>Budget for consistent participation.</strong>
-              <span>
-                Budget should reflect market demand, expected lead cost and the client's capacity to respond to opportunities.
-              </span>
-            </div>
-          </div>
-
-          <div class="feedback-item">
-            <div class="feedback-icon">4</div>
-            <div>
-              <strong>Lead management matters after launch.</strong>
-              <span>
-                Fast response times and consistent lead categorization should be part of the account strategy—not an afterthought.
-              </span>
-            </div>
-          </div>
+          <p id="resultDescription"></p>
 
         </div>
 
-        <div style="margin-top: 28px;">
-          <button class="btn btn-secondary" onclick="restartExercise()">
-            Restart Exercise
+
+        <!-- WHAT WENT WELL -->
+
+        <div
+          class="results-section"
+          id="strengthSection"
+        >
+
+          <h3 class="results-section-title">
+            What You Did Well
+          </h3>
+
+          <div
+            class="feedback-list"
+            id="strengthFeedback"
+          ></div>
+
+        </div>
+
+
+        <!-- IMPROVEMENTS -->
+
+        <div
+          class="results-section"
+          id="improvementSection"
+        >
+
+          <h3 class="results-section-title">
+            What Could Be Better
+          </h3>
+
+          <div
+            class="feedback-list"
+            id="improvementFeedback"
+          ></div>
+
+        </div>
+
+
+        <!-- RECOMMENDED SETUP -->
+
+        <div class="recommended-box">
+
+          <h3>
+            Recommended Setup
+          </h3>
+
+          <p>
+            This is the recommended direction for this training scenario. It is not meant to imply that every live account should use identical settings.
+          </p>
+
+          <div
+            class="recommended-grid"
+            id="recommendedGrid"
+          ></div>
+
+        </div>
+
+
+        <div class="result-actions">
+
+          <button
+            class="btn btn-primary"
+            onclick="newExercise()"
+          >
+            Start New Location
           </button>
+
+          <div class="new-location-note">
+            A different franchise scenario will be assigned.
+          </div>
+
         </div>
 
       </div>
@@ -1333,269 +1653,1938 @@
     </div>
 
   </main>
+
 </div>
 
 
 <script>
+
+  /* ============================================================
+     SCENARIO DATABASE
+     ============================================================ */
+
+  const scenarios = [
+
+    {
+      id: "nashville",
+
+      location: "Premier Pools & Spas — Nashville",
+
+      city: "Nashville, TN",
+
+      businessName: "Premier Pools & Spas - Nashville",
+
+      description:
+        "This franchise wants to grow new pool construction leads across its strongest Nashville-area markets. The team has capacity for additional projects but does not want maintenance or repair inquiries.",
+
+      goalLabel: "Goal: Qualified New Builds",
+
+      primaryGoal:
+        "Increase new pool construction opportunities",
+
+      marketSituation:
+        "Competitive metro with strong suburban demand",
+
+      capacity:
+        "High capacity for new projects",
+
+      marketOptions: [
+        "Nashville, TN",
+        "Franklin, TN",
+        "Murfreesboro, TN",
+        "Clarksville, TN"
+      ],
+
+      additionalAreas: [
+        "Brentwood",
+        "Franklin",
+        "Murfreesboro",
+        "Bowling Green"
+      ],
+
+      recommended: {
+        category: "Swimming pool contractor",
+
+        requiredServices: [
+          "New pool construction",
+          "Pool design"
+        ],
+
+        acceptableServices: [
+          "Pool remodeling"
+        ],
+
+        avoidServices: [
+          "Pool repair",
+          "Pool cleaning",
+          "Hot tub installation"
+        ],
+
+        primaryMarket: "Nashville, TN",
+
+        targeting: "Focused",
+
+        preferredAreas: [
+          "Brentwood",
+          "Franklin",
+          "Murfreesboro"
+        ],
+
+        avoidAreas: [
+          "Bowling Green"
+        ],
+
+        minBudget: 1400,
+        idealBudget: 1800,
+        maxBudget: 2400,
+
+        budgetStrategy: "Aggressive",
+
+        preferredLeadTypes: [
+          "Phone calls",
+          "Messages"
+        ],
+
+        maxResponseMinutes: 30,
+
+        management:
+          "Review and categorize leads consistently"
+      }
+    },
+
+
+    {
+      id: "sacramento",
+
+      location: "Premier Pools & Spas — Sacramento",
+
+      city: "Sacramento, CA",
+
+      businessName: "Premier Pools & Spas - Sacramento",
+
+      description:
+        "This location operates in a large competitive market and wants to maximize qualified new-build opportunities. The sales team has strong capacity and can support a relatively aggressive lead-generation strategy.",
+
+      goalLabel: "Goal: Market Growth",
+
+      primaryGoal:
+        "Increase lead volume for new pool construction",
+
+      marketSituation:
+        "Large market with strong competition",
+
+      capacity:
+        "Strong sales capacity",
+
+      marketOptions: [
+        "Sacramento, CA",
+        "Roseville, CA",
+        "Elk Grove, CA",
+        "Folsom, CA"
+      ],
+
+      additionalAreas: [
+        "Roseville",
+        "Folsom",
+        "Elk Grove",
+        "Davis"
+      ],
+
+      recommended: {
+        category: "Swimming pool contractor",
+
+        requiredServices: [
+          "New pool construction",
+          "Pool design"
+        ],
+
+        acceptableServices: [
+          "Pool remodeling"
+        ],
+
+        avoidServices: [
+          "Pool cleaning",
+          "Pool repair"
+        ],
+
+        primaryMarket: "Sacramento, CA",
+
+        targeting: "Broad",
+
+        preferredAreas: [
+          "Roseville",
+          "Folsom",
+          "Elk Grove"
+        ],
+
+        avoidAreas: [],
+
+        minBudget: 2000,
+        idealBudget: 2600,
+        maxBudget: 3500,
+
+        budgetStrategy: "Aggressive",
+
+        preferredLeadTypes: [
+          "Phone calls",
+          "Messages"
+        ],
+
+        maxResponseMinutes: 30,
+
+        management:
+          "Review and categorize leads consistently"
+      }
+    },
+
+
+    {
+      id: "tampa",
+
+      location: "Premier Pools & Spas — Tampa",
+
+      city: "Tampa, FL",
+
+      businessName: "Premier Pools & Spas - Tampa",
+
+      description:
+        "The Tampa franchise already receives significant inquiry volume. Their priority is maintaining lead quality while keeping the service area manageable for the sales and construction teams.",
+
+      goalLabel: "Goal: Lead Quality",
+
+      primaryGoal:
+        "Improve quality without overwhelming the team",
+
+      marketSituation:
+        "High-demand market with substantial lead volume",
+
+      capacity:
+        "Moderate capacity",
+
+      marketOptions: [
+        "Tampa, FL",
+        "Clearwater, FL",
+        "St. Petersburg, FL",
+        "Lakeland, FL"
+      ],
+
+      additionalAreas: [
+        "Clearwater",
+        "St. Petersburg",
+        "Brandon",
+        "Lakeland"
+      ],
+
+      recommended: {
+        category: "Swimming pool contractor",
+
+        requiredServices: [
+          "New pool construction"
+        ],
+
+        acceptableServices: [
+          "Pool design",
+          "Pool remodeling"
+        ],
+
+        avoidServices: [
+          "Pool cleaning",
+          "Pool repair",
+          "Hot tub installation"
+        ],
+
+        primaryMarket: "Tampa, FL",
+
+        targeting: "Focused",
+
+        preferredAreas: [
+          "Clearwater",
+          "St. Petersburg",
+          "Brandon"
+        ],
+
+        avoidAreas: [
+          "Lakeland"
+        ],
+
+        minBudget: 1200,
+        idealBudget: 1600,
+        maxBudget: 2200,
+
+        budgetStrategy: "Conservative",
+
+        preferredLeadTypes: [
+          "Phone calls",
+          "Messages"
+        ],
+
+        maxResponseMinutes: 30,
+
+        management:
+          "Review and categorize leads consistently"
+      }
+    },
+
+
+    {
+      id: "phoenix",
+
+      location: "Premier Pools & Spas — Phoenix",
+
+      city: "Phoenix, AZ",
+
+      businessName: "Premier Pools & Spas - Phoenix",
+
+      description:
+        "Phoenix is a large pool market with meaningful search demand. The franchise wants to compete aggressively for new builds while maintaining tight control over service categories that do not support its core construction business.",
+
+      goalLabel: "Goal: Competitive Growth",
+
+      primaryGoal:
+        "Capture more high-intent new pool prospects",
+
+      marketSituation:
+        "Large, mature and highly competitive pool market",
+
+      capacity:
+        "High capacity",
+
+      marketOptions: [
+        "Phoenix, AZ",
+        "Scottsdale, AZ",
+        "Mesa, AZ",
+        "Chandler, AZ"
+      ],
+
+      additionalAreas: [
+        "Scottsdale",
+        "Chandler",
+        "Gilbert",
+        "Buckeye"
+      ],
+
+      recommended: {
+        category: "Swimming pool contractor",
+
+        requiredServices: [
+          "New pool construction",
+          "Pool design"
+        ],
+
+        acceptableServices: [
+          "Pool remodeling"
+        ],
+
+        avoidServices: [
+          "Pool repair",
+          "Pool cleaning"
+        ],
+
+        primaryMarket: "Phoenix, AZ",
+
+        targeting: "Broad",
+
+        preferredAreas: [
+          "Scottsdale",
+          "Chandler",
+          "Gilbert"
+        ],
+
+        avoidAreas: [],
+
+        minBudget: 2200,
+        idealBudget: 3000,
+        maxBudget: 4000,
+
+        budgetStrategy: "Aggressive",
+
+        preferredLeadTypes: [
+          "Phone calls",
+          "Messages"
+        ],
+
+        maxResponseMinutes: 30,
+
+        management:
+          "Review and categorize leads consistently"
+      }
+    },
+
+
+    {
+      id: "charlotte",
+
+      location: "Premier Pools & Spas — Charlotte",
+
+      city: "Charlotte, NC",
+
+      businessName: "Premier Pools & Spas - Charlotte",
+
+      description:
+        "The Charlotte location wants steady new construction growth but has limited capacity to handle a major increase in leads. The account should prioritize the strongest service areas and avoid unnecessary expansion.",
+
+      goalLabel: "Goal: Controlled Growth",
+
+      primaryGoal:
+        "Generate sustainable new construction volume",
+
+      marketSituation:
+        "Growing market with expanding suburban demand",
+
+      capacity:
+        "Limited-to-moderate capacity",
+
+      marketOptions: [
+        "Charlotte, NC",
+        "Concord, NC",
+        "Gastonia, NC",
+        "Rock Hill, SC"
+      ],
+
+      additionalAreas: [
+        "Huntersville",
+        "Matthews",
+        "Fort Mill",
+        "Gastonia"
+      ],
+
+      recommended: {
+        category: "Swimming pool contractor",
+
+        requiredServices: [
+          "New pool construction"
+        ],
+
+        acceptableServices: [
+          "Pool design",
+          "Pool remodeling"
+        ],
+
+        avoidServices: [
+          "Pool repair",
+          "Pool cleaning",
+          "Hot tub installation"
+        ],
+
+        primaryMarket: "Charlotte, NC",
+
+        targeting: "Focused",
+
+        preferredAreas: [
+          "Huntersville",
+          "Matthews",
+          "Fort Mill"
+        ],
+
+        avoidAreas: [
+          "Gastonia"
+        ],
+
+        minBudget: 1000,
+        idealBudget: 1400,
+        maxBudget: 1800,
+
+        budgetStrategy: "Conservative",
+
+        preferredLeadTypes: [
+          "Phone calls",
+          "Messages"
+        ],
+
+        maxResponseMinutes: 30,
+
+        management:
+          "Review and categorize leads consistently"
+      }
+    }
+
+  ];
+
+
+  /* ============================================================
+     GLOBAL VARIABLES
+     ============================================================ */
+
+  let currentScenario = null;
+  let previousScenarioId = null;
+
   let currentStep = 1;
   const totalSteps = 6;
 
+
+  /* ============================================================
+     START EXERCISE
+     ============================================================ */
+
+  function initializeExercise() {
+
+    currentScenario = chooseScenario();
+
+    loadScenario();
+
+    goToStep(1);
+
+  }
+
+
+  function chooseScenario() {
+
+    let availableScenarios = scenarios;
+
+    if (previousScenarioId) {
+
+      availableScenarios = scenarios.filter(
+        scenario => scenario.id !== previousScenarioId
+      );
+
+    }
+
+    const randomScenario =
+      availableScenarios[
+        Math.floor(Math.random() * availableScenarios.length)
+      ];
+
+    previousScenarioId = randomScenario.id;
+
+    return randomScenario;
+
+  }
+
+
+  function loadScenario() {
+
+    document.getElementById("scenarioLocation").textContent =
+      currentScenario.location;
+
+    document.getElementById("scenarioDescription").textContent =
+      currentScenario.description;
+
+    document.getElementById("scenarioGoal").textContent =
+      currentScenario.goalLabel;
+
+    document.getElementById("scenarioPrimaryGoal").textContent =
+      currentScenario.primaryGoal;
+
+    document.getElementById("scenarioMarketSituation").textContent =
+      currentScenario.marketSituation;
+
+    document.getElementById("scenarioCapacity").textContent =
+      currentScenario.capacity;
+
+    document.getElementById("businessName").value =
+      currentScenario.businessName;
+
+
+    /* MARKET DROPDOWN */
+
+    const marketSelect =
+      document.getElementById("market");
+
+    marketSelect.innerHTML =
+      `<option value="">Select a market</option>`;
+
+    currentScenario.marketOptions.forEach(market => {
+
+      const option =
+        document.createElement("option");
+
+      option.value = market;
+      option.textContent = market;
+
+      marketSelect.appendChild(option);
+
+    });
+
+
+    /* AREA OPTIONS */
+
+    const areaContainer =
+      document.getElementById("areaOptions");
+
+    areaContainer.innerHTML = "";
+
+    currentScenario.additionalAreas.forEach(
+      (area, index) => {
+
+        const choice =
+          document.createElement("div");
+
+        choice.className = "choice";
+
+        choice.innerHTML = `
+
+          <input
+            type="checkbox"
+            id="dynamicArea${index}"
+            data-area="${area}"
+          >
+
+          <label for="dynamicArea${index}">
+
+            <span class="check-ui"></span>
+
+            <span>
+
+              <span class="choice-title">
+                ${area}
+              </span>
+
+              <span class="choice-desc">
+                Add ${area} to the service area.
+              </span>
+
+            </span>
+
+          </label>
+
+        `;
+
+        areaContainer.appendChild(choice);
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     NAVIGATION
+     ============================================================ */
+
   function goToStep(step) {
+
     currentStep = step;
 
-    document.querySelectorAll(".step-panel").forEach(panel => {
-      panel.classList.remove("active");
-    });
+    document.querySelectorAll(".step-panel")
+      .forEach(panel => {
 
-    document.querySelector(`[data-panel="${step}"]`).classList.add("active");
+        panel.classList.remove("active");
 
-    document.querySelectorAll(".step-item").forEach(item => {
-      const itemStep = Number(item.dataset.step);
+      });
 
-      item.classList.remove("active");
 
-      if (itemStep === step) {
-        item.classList.add("active");
-      }
+    document
+      .querySelector(`[data-panel="${step}"]`)
+      .classList.add("active");
 
-      if (itemStep < step) {
-        item.classList.add("complete");
-      } else {
-        item.classList.remove("complete");
-      }
-    });
+
+    document.querySelectorAll(".step-item")
+      .forEach(item => {
+
+        const itemStep =
+          Number(item.dataset.step);
+
+        item.classList.remove("active");
+
+        if (itemStep === step) {
+
+          item.classList.add("active");
+
+        }
+
+        if (itemStep < step) {
+
+          item.classList.add("complete");
+
+        } else {
+
+          item.classList.remove("complete");
+
+        }
+
+      });
+
 
     document.getElementById("progressText").textContent =
       `${step} of ${totalSteps}`;
 
+
     document.getElementById("progressBar").style.width =
       `${(step / totalSteps) * 100}%`;
 
-    document.getElementById("backBtn").disabled = step === 1;
 
-    const nextBtn = document.getElementById("nextBtn");
+    document.getElementById("backBtn").disabled =
+      step === 1;
+
+
+    const nextBtn =
+      document.getElementById("nextBtn");
+
 
     if (step === totalSteps) {
+
       nextBtn.style.visibility = "hidden";
+
       populateReview();
+
     } else {
+
       nextBtn.style.visibility = "visible";
-      nextBtn.textContent = "Continue";
+
     }
+
 
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+
   }
+
 
   function changeStep(direction) {
-    const newStep = currentStep + direction;
 
-    if (newStep >= 1 && newStep <= totalSteps) {
+    const newStep =
+      currentStep + direction;
+
+    if (
+      newStep >= 1 &&
+      newStep <= totalSteps
+    ) {
+
       goToStep(newStep);
+
     }
+
   }
 
-  document.querySelectorAll(".step-item").forEach(item => {
-    item.addEventListener("click", function() {
-      goToStep(Number(this.dataset.step));
-    });
-  });
 
+  document.querySelectorAll(".step-item")
+    .forEach(item => {
+
+      item.addEventListener(
+        "click",
+        function() {
+
+          goToStep(
+            Number(this.dataset.step)
+          );
+
+        }
+      );
+
+    });
+
+
+  /* ============================================================
+     HELPER FUNCTIONS
+     ============================================================ */
 
   function checkedValues(selector, attribute) {
-    return [...document.querySelectorAll(selector)]
+
+    return [
+      ...document.querySelectorAll(selector)
+    ]
       .filter(item => item.checked)
-      .map(item => item.dataset[attribute])
-      .join(", ") || "None selected";
+      .map(item => item.dataset[attribute]);
+
   }
 
 
   function radioValue(name) {
-    const item = document.querySelector(`input[name="${name}"]:checked`);
-    return item ? item.value : "Not selected";
+
+    const item =
+      document.querySelector(
+        `input[name="${name}"]:checked`
+      );
+
+    return item
+      ? item.value
+      : "";
+
   }
 
 
   function reviewLine(key, value) {
+
     return `
+
       <div class="review-line">
-        <span class="review-key">${key}</span>
-        <span class="review-value">${value}</span>
+
+        <span class="review-key">
+          ${key}
+        </span>
+
+        <span class="review-value">
+          ${value}
+        </span>
+
       </div>
+
     `;
+
   }
 
 
+  /* ============================================================
+     REVIEW PAGE
+     ============================================================ */
+
   function populateReview() {
+
     const business =
-      document.getElementById("businessName").value || "Not entered";
+      document.getElementById("businessName").value ||
+      "Not entered";
+
 
     const category =
-      document.getElementById("category").value || "Not selected";
+      document.getElementById("category").value ||
+      "Not selected";
+
 
     const services =
-      checkedValues('[data-service]', "service");
+      checkedValues(
+        '[data-service]',
+        "service"
+      );
+
 
     const market =
-      document.getElementById("market").value || "Not selected";
+      document.getElementById("market").value ||
+      "Not selected";
+
 
     const targeting =
-      radioValue("targeting");
+      radioValue("targeting") ||
+      "Not selected";
+
 
     const areas =
-      checkedValues('[data-area]', "area");
+      checkedValues(
+        '[data-area]',
+        "area"
+      );
+
 
     const budget =
-      document.getElementById("budget").value || "0";
+      document.getElementById("budget").value ||
+      "0";
+
 
     const strategy =
-      radioValue("budgetStrategy");
+      radioValue("budgetStrategy") ||
+      "Not selected";
+
 
     const leadTypes =
-      checkedValues('[data-lead]', "lead");
+      checkedValues(
+        '[data-lead]',
+        "lead"
+      );
+
 
     const response =
-      document.getElementById("responseSpeed").value || "Not selected";
+      document.getElementById("responseSpeed").value ||
+      "Not selected";
+
 
     const management =
-      document.getElementById("leadManagement").value || "Not selected";
+      document.getElementById("leadManagement").value ||
+      "Not selected";
 
 
     document.getElementById("reviewGrid").innerHTML = `
 
       <div class="review-section">
+
         <h3>Business Profile</h3>
-        ${reviewLine("Business", business)}
-        ${reviewLine("Category", category)}
+
+        ${reviewLine(
+          "Business",
+          business
+        )}
+
+        ${reviewLine(
+          "Category",
+          category
+        )}
+
       </div>
 
+
       <div class="review-section">
+
         <h3>Services</h3>
-        ${reviewLine("Selected services", services)}
+
+        ${reviewLine(
+          "Selected services",
+          services.length
+            ? services.join(", ")
+            : "None selected"
+        )}
+
       </div>
 
+
       <div class="review-section">
+
         <h3>Service Area</h3>
-        ${reviewLine("Primary market", market)}
-        ${reviewLine("Targeting approach", targeting)}
-        ${reviewLine("Priority markets", areas)}
+
+        ${reviewLine(
+          "Primary market",
+          market
+        )}
+
+        ${reviewLine(
+          "Targeting approach",
+          targeting
+        )}
+
+        ${reviewLine(
+          "Additional markets",
+          areas.length
+            ? areas.join(", ")
+            : "None selected"
+        )}
+
       </div>
 
+
       <div class="review-section">
+
         <h3>Budget</h3>
-        ${reviewLine("Weekly budget", "$" + Number(budget).toLocaleString())}
-        ${reviewLine("Strategy", strategy)}
+
+        ${reviewLine(
+          "Weekly budget",
+          "$" +
+          Number(budget).toLocaleString()
+        )}
+
+        ${reviewLine(
+          "Strategy",
+          strategy
+        )}
+
       </div>
+
 
       <div class="review-section">
+
         <h3>Lead Settings</h3>
-        ${reviewLine("Lead types", leadTypes)}
-        ${reviewLine("Response expectation", response)}
-        ${reviewLine("Management", management)}
+
+        ${reviewLine(
+          "Lead types",
+          leadTypes.length
+            ? leadTypes.join(", ")
+            : "None selected"
+        )}
+
+        ${reviewLine(
+          "Response expectation",
+          response
+        )}
+
+        ${reviewLine(
+          "Lead management",
+          management
+        )}
+
       </div>
+
     `;
+
   }
 
 
-  function calculateScore() {
-    let points = 0;
-    let possible = 10;
+  /* ============================================================
+     EVALUATION ENGINE
+     ============================================================ */
 
-    // Category
+  function evaluateExercise() {
+
+    const rec =
+      currentScenario.recommended;
+
+
+    let earnedPoints = 0;
+    let totalPoints = 0;
+
+
+    const strengths = [];
+    const improvements = [];
+
+
+    /* ------------------------
+       CATEGORY
+       ------------------------ */
+
+    totalPoints += 10;
+
+    const category =
+      document.getElementById("category").value;
+
+
+    if (category === rec.category) {
+
+      earnedPoints += 10;
+
+      strengths.push({
+        title:
+          "Your primary category is aligned.",
+
+        text:
+          `"${rec.category}" accurately represents the advertiser's core service and supports the intent of this campaign.`
+      });
+
+    } else {
+
+      improvements.push({
+        level: "important",
+
+        title:
+          "Revisit the primary business category.",
+
+        text:
+          `You selected "${category || "no category"}." For this scenario, "${rec.category}" is the better fit because the campaign is centered on pool construction rather than a broader or secondary service.`
+      });
+
+    }
+
+
+    /* ------------------------
+       SERVICES
+       ------------------------ */
+
+    const selectedServices =
+      checkedValues(
+        '[data-service]',
+        "service"
+      );
+
+
+    rec.requiredServices.forEach(service => {
+
+      totalPoints += 8;
+
+      if (
+        selectedServices.includes(service)
+      ) {
+
+        earnedPoints += 8;
+
+        strengths.push({
+          title:
+            `${service} is appropriately included.`,
+
+          text:
+            `This service directly supports the franchise's stated goal for the exercise.`
+        });
+
+      } else {
+
+        improvements.push({
+          level: "important",
+
+          title:
+            `Add ${service}.`,
+
+          text:
+            `${service} is a core service for this scenario. Leaving it inactive could prevent the location from receiving some of the most relevant opportunities.`
+        });
+
+      }
+
+    });
+
+
+    selectedServices.forEach(service => {
+
+      if (
+        rec.avoidServices.includes(service)
+      ) {
+
+        totalPoints += 5;
+
+        improvements.push({
+          level: "improve",
+
+          title:
+            `Consider removing ${service}.`,
+
+          text:
+            `This service is not a priority for ${currentScenario.location}. Activating it may increase lead volume, but those leads would be less aligned with the client's actual goals.`
+        });
+
+      }
+
+    });
+
+
+    /* ------------------------
+       PRIMARY MARKET
+       ------------------------ */
+
+    totalPoints += 10;
+
+    const selectedMarket =
+      document.getElementById("market").value;
+
+
     if (
-      document.getElementById("category").value ===
-      "Swimming pool contractor"
+      selectedMarket ===
+      rec.primaryMarket
     ) {
-      points += 2;
+
+      earnedPoints += 10;
+
+      strengths.push({
+        title:
+          "You selected the correct primary market.",
+
+        text:
+          `${rec.primaryMarket} should anchor this account based on the assigned franchise location.`
+      });
+
+    } else {
+
+      improvements.push({
+        level: "important",
+
+        title:
+          "The primary market should match the franchise's core market.",
+
+        text:
+          `You selected "${selectedMarket || "no market"}." The recommended primary market is ${rec.primaryMarket}.`
+      });
+
     }
 
-    // New construction selected
-    if (document.getElementById("service1").checked) {
-      points += 2;
-    }
 
-    // Avoid cleaning
-    if (!document.getElementById("service4").checked) {
-      points += 1;
-    }
+    /* ------------------------
+       TARGETING APPROACH
+       ------------------------ */
 
-    // Nashville
-    if (document.getElementById("market").value === "Nashville, TN") {
-      points += 1;
-    }
+    totalPoints += 10;
 
-    // Focused metro
-    if (radioValue("targeting") === "Focused metro") {
-      points += 1;
-    }
+    const targeting =
+      radioValue("targeting");
 
-    // Budget
-    const budget = Number(document.getElementById("budget").value);
-
-    if (budget >= 1000) {
-      points += 1;
-    }
-
-    // Fast response
-    const response = document.getElementById("responseSpeed").value;
 
     if (
-      response === "Within 5 minutes" ||
-      response === "Within 30 minutes"
+      targeting === rec.targeting
     ) {
-      points += 1;
+
+      earnedPoints += 10;
+
+      strengths.push({
+        title:
+          "Your geographic strategy fits the scenario.",
+
+        text:
+          rec.targeting === "Focused"
+            ? "A focused service area helps protect lead quality and keeps spend concentrated within markets the franchise can realistically serve."
+            : "A broader targeting strategy makes sense here because the franchise has the capacity and market opportunity to pursue additional geographic lead volume."
+      });
+
+    } else {
+
+      improvements.push({
+        level: "improve",
+
+        title:
+          "Adjust the geographic targeting strategy.",
+
+        text:
+          rec.targeting === "Focused"
+            ? "This scenario favors a focused service area. Expanding too broadly could dilute budget and create leads outside the franchise's strongest operating area."
+            : "This franchise has enough capacity and market opportunity to justify broader targeting. A tightly restricted service area could unnecessarily limit lead volume."
+      });
+
     }
 
-    // Lead management
+
+    /* ------------------------
+       ADDITIONAL AREAS
+       ------------------------ */
+
+    const selectedAreas =
+      checkedValues(
+        '[data-area]',
+        "area"
+      );
+
+
+    rec.preferredAreas.forEach(area => {
+
+      totalPoints += 3;
+
+      if (
+        selectedAreas.includes(area)
+      ) {
+
+        earnedPoints += 3;
+
+      }
+
+    });
+
+
+    const goodAreas =
+      selectedAreas.filter(
+        area =>
+          rec.preferredAreas.includes(area)
+      );
+
+
+    if (goodAreas.length > 0) {
+
+      strengths.push({
+        title:
+          "You included useful secondary markets.",
+
+        text:
+          `${goodAreas.join(", ")} ${
+            goodAreas.length === 1
+              ? "is"
+              : "are"
+          } aligned with the recommended service-area strategy for this location.`
+      });
+
+    }
+
+
+    const badAreas =
+      selectedAreas.filter(
+        area =>
+          rec.avoidAreas.includes(area)
+      );
+
+
+    badAreas.forEach(area => {
+
+      improvements.push({
+        level: "improve",
+
+        title:
+          `Reconsider ${area}.`,
+
+        text:
+          `${area} stretches beyond the preferred geographic strategy for this scenario. Expanding there may create operational inefficiency or dilute spend from stronger markets.`
+      });
+
+    });
+
+
+    /* ------------------------
+       BUDGET
+       ------------------------ */
+
+    totalPoints += 15;
+
+    const budget =
+      Number(
+        document.getElementById("budget").value
+      );
+
+
     if (
-      document.getElementById("leadManagement").value ===
-      "Review and categorize leads consistently"
+      budget >= rec.minBudget &&
+      budget <= rec.maxBudget
     ) {
-      points += 1;
+
+      earnedPoints += 15;
+
+      strengths.push({
+        title:
+          "Your starting budget is reasonable.",
+
+        text:
+          `$${budget.toLocaleString()} per week fits the recommended range for this market and the franchise's current capacity.`
+      });
+
+    } else if (
+      budget < rec.minBudget
+    ) {
+
+      improvements.push({
+        level: "important",
+
+        title:
+          "The budget may be too restrictive.",
+
+        text:
+          `You selected $${budget.toLocaleString()} per week. For this scenario, approximately $${rec.minBudget.toLocaleString()}–$${rec.maxBudget.toLocaleString()} per week would provide a stronger starting point. A budget that is too low can limit the account's ability to compete consistently.`
+      });
+
+    } else {
+
+      improvements.push({
+        level: "improve",
+
+        title:
+          "The budget may be more aggressive than necessary.",
+
+        text:
+          `You selected $${budget.toLocaleString()} per week. The recommended initial range is approximately $${rec.minBudget.toLocaleString()}–$${rec.maxBudget.toLocaleString()}. Additional spend should be justified by lead quality, market demand and the franchise's ability to respond.`
+      });
+
     }
 
-    return Math.round((points / possible) * 100);
+
+    /* ------------------------
+       BUDGET STRATEGY
+       ------------------------ */
+
+    totalPoints += 5;
+
+    const budgetStrategy =
+      radioValue("budgetStrategy");
+
+
+    if (
+      budgetStrategy ===
+      rec.budgetStrategy
+    ) {
+
+      earnedPoints += 5;
+
+      strengths.push({
+        title:
+          "Your budget strategy matches the client's situation.",
+
+        text:
+          rec.budgetStrategy === "Aggressive"
+            ? "This location has enough capacity and opportunity to support a more lead-volume-focused launch."
+            : "A controlled launch is appropriate here because lead quality and operational capacity matter more than maximizing raw volume."
+      });
+
+    } else {
+
+      improvements.push({
+        level: "improve",
+
+        title:
+          "Match the budget strategy to client capacity.",
+
+        text:
+          rec.budgetStrategy === "Aggressive"
+            ? "This scenario can support a more aggressive lead-volume strategy. The client has the capacity to handle additional opportunities."
+            : "This scenario favors a more controlled launch. The franchise should validate lead quality and protect operational capacity before scaling aggressively."
+      });
+
+    }
+
+
+    /* ------------------------
+       LEAD TYPES
+       ------------------------ */
+
+    totalPoints += 8;
+
+    const leadTypes =
+      checkedValues(
+        '[data-lead]',
+        "lead"
+      );
+
+
+    const hasAllLeadTypes =
+      rec.preferredLeadTypes.every(
+        lead =>
+          leadTypes.includes(lead)
+      );
+
+
+    if (hasAllLeadTypes) {
+
+      earnedPoints += 8;
+
+      strengths.push({
+        title:
+          "You kept both lead paths available.",
+
+        text:
+          "Allowing phone calls and messages gives high-intent prospects multiple ways to contact the business."
+      });
+
+    } else {
+
+      const missing =
+        rec.preferredLeadTypes.filter(
+          lead =>
+            !leadTypes.includes(lead)
+        );
+
+      improvements.push({
+        level: "improve",
+
+        title:
+          `Consider enabling ${missing.join(" and ")}.`,
+
+        text:
+          "Restricting lead methods can reduce the number of qualified prospects able to contact the franchise through their preferred method."
+      });
+
+    }
+
+
+    /* ------------------------
+       RESPONSE TIME
+       ------------------------ */
+
+    totalPoints += 10;
+
+    const responseSpeed =
+      document.getElementById(
+        "responseSpeed"
+      ).value;
+
+
+    const responseMinutes = {
+
+      "Within 5 minutes": 5,
+      "Within 30 minutes": 30,
+      "Within 2 hours": 120,
+      "Within 1 business day": 480
+
+    };
+
+
+    const selectedMinutes =
+      responseMinutes[responseSpeed] ||
+      99999;
+
+
+    if (
+      selectedMinutes <=
+      rec.maxResponseMinutes
+    ) {
+
+      earnedPoints += 10;
+
+      strengths.push({
+        title:
+          "Your lead response expectation is strong.",
+
+        text:
+          `${responseSpeed} supports a competitive LSA program and reduces the risk of high-intent prospects moving on to another provider.`
+      });
+
+    } else {
+
+      improvements.push({
+        level: "important",
+
+        title:
+          "Set a faster lead-response expectation.",
+
+        text:
+          `${responseSpeed || "No response expectation"} is slower than recommended. For this scenario, the team should aim to respond within ${rec.maxResponseMinutes} minutes whenever possible.`
+      });
+
+    }
+
+
+    /* ------------------------
+       LEAD MANAGEMENT
+       ------------------------ */
+
+    totalPoints += 10;
+
+    const management =
+      document.getElementById(
+        "leadManagement"
+      ).value;
+
+
+    if (
+      management ===
+      rec.management
+    ) {
+
+      earnedPoints += 10;
+
+      strengths.push({
+        title:
+          "You included ongoing lead management.",
+
+        text:
+          "Consistent review and categorization creates better visibility into lead quality and helps the team make smarter optimization decisions."
+      });
+
+    } else {
+
+      improvements.push({
+        level: "important",
+
+        title:
+          "Lead management needs a stronger process.",
+
+        text:
+          "The account should not simply collect leads after launch. Leads should be reviewed and categorized consistently so the team can evaluate quality, disputes and optimization opportunities."
+      });
+
+    }
+
+
+    const score =
+      Math.round(
+        (earnedPoints / totalPoints) *
+        100
+      );
+
+
+    return {
+      score,
+      strengths,
+      improvements
+    };
+
   }
 
+
+  /* ============================================================
+     RESULTS
+     ============================================================ */
 
   function submitExercise() {
-    const score = calculateScore();
 
-    document.getElementById("exerciseContent").style.display = "none";
+    const results =
+      evaluateExercise();
 
-    document.getElementById("resultScreen").classList.add("active");
 
-    document.getElementById("scoreCircle").textContent = score + "%";
+    document.getElementById(
+      "exerciseContent"
+    ).style.display =
+      "none";
 
-    let title = "Review Your Setup";
-    let description =
-      "Some account settings could be better aligned with the advertiser's lead-generation goals.";
 
-    if (score >= 90) {
-      title = "Strong Account Setup";
+    document.getElementById(
+      "resultScreen"
+    ).classList.add("active");
+
+
+    document.getElementById(
+      "resultsLocation"
+    ).textContent =
+      `${currentScenario.location} Results`;
+
+
+    document.getElementById(
+      "scoreCircle"
+    ).textContent =
+      `${results.score}%`;
+
+
+    let title;
+    let description;
+
+
+    if (results.score >= 90) {
+
+      title =
+        "Strong Account Setup";
+
       description =
-        "Your selections closely align with the recommended strategy for this training scenario.";
-    } else if (score >= 70) {
-      title = "Good Foundation";
+        "Your configuration closely matches the needs of this franchise and shows strong alignment between services, geography, budget and lead management.";
+
+    } else if (results.score >= 75) {
+
+      title =
+        "Good Foundation";
+
       description =
-        "Your account is generally aligned with the scenario, with a few opportunities to improve targeting or lead management.";
+        "Most of your account decisions support the client scenario, but there are a few areas where the setup could be more precise.";
+
+    } else if (results.score >= 60) {
+
+      title =
+        "Needs Some Adjustment";
+
+      description =
+        "You made several reasonable decisions, but some settings could reduce lead quality, limit performance or create operational issues for the franchise.";
+
+    } else {
+
+      title =
+        "Rework the Account Strategy";
+
+      description =
+        "Several key settings are not aligned with the assigned franchise scenario. Review the feedback below before building the next account.";
+
     }
 
-    document.getElementById("resultTitle").textContent = title;
-    document.getElementById("resultDescription").textContent = description;
+
+    document.getElementById(
+      "resultTitle"
+    ).textContent =
+      title;
+
+
+    document.getElementById(
+      "resultDescription"
+    ).textContent =
+      description;
+
+
+    renderFeedback(
+      results.strengths,
+      results.improvements
+    );
+
+
+    renderRecommendedSetup();
+
 
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
+
   }
 
 
-  function restartExercise() {
-    location.reload();
+  function renderFeedback(
+    strengths,
+    improvements
+  ) {
+
+    const strengthContainer =
+      document.getElementById(
+        "strengthFeedback"
+      );
+
+
+    const improvementContainer =
+      document.getElementById(
+        "improvementFeedback"
+      );
+
+
+    strengthContainer.innerHTML = "";
+    improvementContainer.innerHTML = "";
+
+
+    if (strengths.length === 0) {
+
+      strengthContainer.innerHTML = `
+
+        <div class="feedback-item improve">
+
+          <div class="feedback-icon">
+            !
+          </div>
+
+          <div class="feedback-content">
+
+            <strong>
+              Keep working through the setup.
+            </strong>
+
+            <span>
+              The current account configuration does not yet contain a major element that fully matches the recommended strategy.
+            </span>
+
+          </div>
+
+        </div>
+
+      `;
+
+    } else {
+
+      strengths.forEach(item => {
+
+        strengthContainer.innerHTML += `
+
+          <div class="feedback-item good">
+
+            <div class="feedback-icon">
+              ✓
+            </div>
+
+            <div class="feedback-content">
+
+              <strong>
+                ${item.title}
+              </strong>
+
+              <span>
+                ${item.text}
+              </span>
+
+            </div>
+
+          </div>
+
+        `;
+
+      });
+
+    }
+
+
+    if (improvements.length === 0) {
+
+      improvementContainer.innerHTML = `
+
+        <div class="feedback-item good">
+
+          <div class="feedback-icon">
+            ✓
+          </div>
+
+          <div class="feedback-content">
+
+            <strong>
+              No major configuration issues.
+            </strong>
+
+            <span>
+              Your selections are well aligned with the recommended setup for this training scenario.
+            </span>
+
+          </div>
+
+        </div>
+
+      `;
+
+    } else {
+
+      improvements.forEach(item => {
+
+        improvementContainer.innerHTML += `
+
+          <div class="feedback-item ${item.level}">
+
+            <div class="feedback-icon">
+              ${item.level === "important" ? "!" : "↑"}
+            </div>
+
+            <div class="feedback-content">
+
+              <strong>
+                ${item.title}
+              </strong>
+
+              <span>
+                ${item.text}
+              </span>
+
+            </div>
+
+          </div>
+
+        `;
+
+      });
+
+    }
+
   }
+
+
+  function renderRecommendedSetup() {
+
+    const rec =
+      currentScenario.recommended;
+
+
+    document.getElementById(
+      "recommendedGrid"
+    ).innerHTML = `
+
+      <div class="recommended-item">
+
+        <span>
+          Primary Category
+        </span>
+
+        <strong>
+          ${rec.category}
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Core Services
+        </span>
+
+        <strong>
+          ${rec.requiredServices.join(", ")}
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Primary Market
+        </span>
+
+        <strong>
+          ${rec.primaryMarket}
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Geographic Strategy
+        </span>
+
+        <strong>
+          ${
+            rec.targeting === "Focused"
+              ? "Focused Service Area"
+              : "Broad Expansion"
+          }
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Starting Budget
+        </span>
+
+        <strong>
+          Approx. $${rec.idealBudget.toLocaleString()} / week
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Budget Strategy
+        </span>
+
+        <strong>
+          ${
+            rec.budgetStrategy === "Aggressive"
+              ? "Lead Volume Focused"
+              : "Conservative Launch"
+          }
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Lead Types
+        </span>
+
+        <strong>
+          ${rec.preferredLeadTypes.join(" + ")}
+        </strong>
+
+      </div>
+
+
+      <div class="recommended-item">
+
+        <span>
+          Lead Response
+        </span>
+
+        <strong>
+          Within ${rec.maxResponseMinutes} minutes
+        </strong>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* ============================================================
+     NEW EXERCISE
+     ============================================================ */
+
+  function newExercise() {
+
+    resetForm();
+
+
+    document.getElementById(
+      "resultScreen"
+    ).classList.remove("active");
+
+
+    document.getElementById(
+      "exerciseContent"
+    ).style.display =
+      "block";
+
+
+    currentScenario =
+      chooseScenario();
+
+
+    loadScenario();
+
+
+    goToStep(1);
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  function resetForm() {
+
+    document
+      .querySelectorAll(
+        'input[type="checkbox"], input[type="radio"]'
+      )
+      .forEach(input => {
+
+        input.checked = false;
+
+      });
+
+
+    document.getElementById(
+      "category"
+    ).value = "";
+
+
+    document.getElementById(
+      "market"
+    ).innerHTML = "";
+
+
+    document.getElementById(
+      "budget"
+    ).value = 1500;
+
+
+    document.getElementById(
+      "responseSpeed"
+    ).value = "";
+
+
+    document.getElementById(
+      "leadManagement"
+    ).value = "";
+
+  }
+
+
+  /* ============================================================
+     INITIAL LOAD
+     ============================================================ */
+
+  initializeExercise();
+
 </script>
 
 </body>
